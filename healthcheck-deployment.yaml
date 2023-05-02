@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcheck
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthcheck
+  template:
+    metadata:
+      labels:
+        app: healthcheck
+    spec:
+      containers:
+        - name: healthcheck
+          image: nginx
+          ports:
+            - containerPort: 80
+          command: ["/bin/sh"]
+          args:
+            [
+              "-c",
+              "echo 'hello world' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'",
+            ]
