@@ -21,5 +21,5 @@ spec:
           args:
             [
               "-c",
-              "echo 'hello world' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'",
+              "echo 'hello world 2.0' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'",
             ]
